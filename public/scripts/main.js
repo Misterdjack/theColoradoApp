@@ -1,5 +1,5 @@
 
-
+// Google Maps
 var initialize=function () {
         var mapOptions = {
           center: { lat: -34.397, lng: 150.644},
@@ -9,4 +9,12 @@ var initialize=function () {
             mapOptions);
       };
 
-google.maps.event.addDomListener(window, 'load', initialize);
+
+$(document).on('ready', function(){
+	// Google maps initializer 
+	$(document).on('load', initialize());
+
+
+});
+
+// google.maps.event.addDomListener(window, 'load', initialize);
