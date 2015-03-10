@@ -1,1 +1,9 @@
 #map-canvas, html, body { height: 100% }
+
+#mapcontainer { 
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	height: 80%;
+	width: 92%
+}
