@@ -1,13 +1,20 @@
-
-// Google Maps Api
+/////////////////////
+// Google Maps Api //
+/////////////////////
 var map;
 var marker;
 
-// Create map for load
+/////////////////////////
+// Create map for load //
+/////////////////////////
 var initialize= function() {
+  
   var mapOptions = {
-    zoom: 15
+    zoom: 15,
+    // additional options here
   };
+
+  // Instantiate a new map
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
 
@@ -18,39 +25,18 @@ var initialize= function() {
                                        position.coords.longitude);
 
       map.setCenter(pos);
-
-      // Add Marker
-      marker = new google.maps.Marker({ 
-          map:map,
-          draggable:true,
-          animation: google.maps.Animation.DROP,
-          position: pos
-        });
-        
-      // toggleBounce Animation
-      var toggleBounce = function() {
-
-        if (marker.getAnimation() !== null) {
-          marker.setAnimation(null);
-        } else {
-          marker.setAnimation(google.maps.Animation.BOUNCE);
-        }
-
-        $(document).on('click', toggleBounce);
-        // google.maps.event.addListener(marker, 'click', toggleBounce);
-      };
     }, function() {
       handleNoGeolocation(true);
     });
   } else {
     // Browser doesn't support Geolocation
     handleNoGeolocation(false);
-  }
-
-  
+  }  
 };
 
-// Error handle if browser doesn't support Geolocation
+/////////////////////////////////////////////////////////
+// Error handle if browser doesn't support Geolocation //
+/////////////////////////////////////////////////////////
 var handleNoGeolocation=function(errorFlag) {
   if (errorFlag) {
     var content = 'Error: The Geolocation service failed.';
@@ -68,10 +54,15 @@ var handleNoGeolocation=function(errorFlag) {
   map.setCenter(options.position);
 };
 
+//////////////////////////////
+// Vanilla JS DOM rendering //
+//////////////////////////////
+// google.maps.event.addDomListener(window, 'load', initialize);
 
 
-
-
+//////////////////////////
+// jQuery DOM rendering //
+//////////////////////////
 $(document).on('ready', function(){
   // Google maps initializer 
   $(document).on('load', initialize());
