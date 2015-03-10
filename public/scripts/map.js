@@ -20,7 +20,7 @@ var initialize= function() {
       map.setCenter(pos);
 
       // Add Marker
-      marker = new google.maps.Marker({
+      marker = new google.maps.Marker({ 
           map:map,
           draggable:true,
           animation: google.maps.Animation.DROP,
