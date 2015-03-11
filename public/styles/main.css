@@ -1,4 +1,7 @@
-#map-canvas, html, body { height: 100% }
+#map-canvas, html, body { 
+	height: 100%;
+	background-color:  #C60000
+}
 
 #mapcontainer { 
 	float: none;
@@ -6,4 +9,9 @@
 	margin-right: auto;
 	height: 80%;
 	width: 92%
+}
+
+.panel {
+	background-color: #002868;
+	color:   #FCFB00
 }

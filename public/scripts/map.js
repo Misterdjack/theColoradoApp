@@ -35,9 +35,24 @@ var initialize= function() {
     // Browser doesn't support Geolocation
     handleNoGeolocation(false);
   }
+
+  //Click event to place marker 
   google.maps.event.addListener(map, 'click', function(event) {
      placeMarker(event.latLng);
   });
+
+  // var openModal = function () {
+    
+  //   if (marker.getAnimation() !== null) {
+  //       marker.setAnimation(null);
+  //     } else {
+  //       marker.setAnimation(google.maps.Animation.BOUNCE);
+  //     }
+    
+  // };
+
+  // // Click event to open modal
+  // google.maps.event.addListener(marker, 'click', openModal);
 };
 
 /////////////////////////////////////////////////////////
@@ -66,12 +81,12 @@ var handleNoGeolocation=function(errorFlag) {
 var placeMarker = function(pos) {
   var marker = new google.maps.Marker({
       position: pos, 
-      map: map
+      map: map,
+      draggable: true,
+      animation: google.maps.Animation.DROP
   });
 
-console.log(map);
-
-  map.setCenter(pos);
+  // map.setCenter(pos);
   marker.setMap(map);
 
 
@@ -80,10 +95,13 @@ console.log(map);
   // });
 };
 
+
+
 //////////////////////////////
 // Vanilla JS DOM rendering //
 //////////////////////////////
 google.maps.event.addDomListener(window, 'load', initialize);
+
 
 
 
