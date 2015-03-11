@@ -1,14 +1,17 @@
 /////////////////////
 // Google Maps Api //
 /////////////////////
+
+// Global Variables
 var map;
 var marker;
+var pos;
 
 /////////////////////////
 // Create map for load //
 /////////////////////////
 var initialize= function() {
-  
+
   var mapOptions = {
     zoom: 15,
     // additional options here
@@ -31,7 +34,10 @@ var initialize= function() {
   } else {
     // Browser doesn't support Geolocation
     handleNoGeolocation(false);
-  }  
+  }
+  google.maps.event.addListener(map, 'click', function(event) {
+     placeMarker(event.latLng);
+  });
 };
 
 /////////////////////////////////////////////////////////
@@ -41,7 +47,7 @@ var handleNoGeolocation=function(errorFlag) {
   if (errorFlag) {
     var content = 'Error: The Geolocation service failed.';
   } else {
-    var content = 'Error: Your browser doesn\'t support geolocation.';
+    var content = 'Error: Your browser does not support geolocation.';
   }
 
   var options = {
@@ -54,21 +60,34 @@ var handleNoGeolocation=function(errorFlag) {
   map.setCenter(options.position);
 };
 
+////////////////
+// Add Marker //
+////////////////
+var placeMarker = function(pos) {
+  var marker = new google.maps.Marker({
+      position: pos, 
+      map: map
+  });
+
+console.log(map);
+
+  map.setCenter(pos);
+  marker.setMap(map);
+
+
+  // $.get({
+     // Ajax call to be put in later persist to database e.g. may need a toJson method in google documentation
+  // });
+};
+
 //////////////////////////////
 // Vanilla JS DOM rendering //
 //////////////////////////////
-// google.maps.event.addDomListener(window, 'load', initialize);
+google.maps.event.addDomListener(window, 'load', initialize);
 
 
-//////////////////////////
-// jQuery DOM rendering //
-//////////////////////////
-$(document).on('ready', function(){
-  // Google maps initializer 
-  $(document).on('load', initialize());
 
 
-});
 
 
 
