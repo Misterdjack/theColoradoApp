@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var indexController = require('./controllers/index.js');
 var mapController = require('./controllers/map.js');
+var updateController = require('./controllers/update.js');
 
 // Mongoose
 var mongoose = require('mongoose');
@@ -15,8 +16,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/', indexController.index);
 
-// Api route
-app.get('/api/map', mapController.map);
+// Update routes
+app.post('/update/addAdventure', updateController.addAdventure);
+app.post('/update/deleteAdventure', updateController.deleteAdventure);
+app.get('/update/getAdventure/:adventure_id', updateController.getAdventure);
+app.post('/update/editAdventure/:adventure_id', updateController.editAdventure);
+// Map route
+app.get('/update/map', mapController.map);
 
 var server = app.listen(7194, function() {
 	console.log('Express server listening on port ' + server.address().port);

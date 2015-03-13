@@ -14,27 +14,76 @@ block content
 				a.list-group-item.list-group-item-info(href='#') Porta ac consectetur ac
 				|   
 				a.list-group-item.list-group-item-info(href='#') Vestibulum at eros
-				|   
-				a.list-group-item.list-group-item-info(href='#') Dapibus ac facilisis in
-				|   
-				a.list-group-item.list-group-item-info(href='#') Morbi leo risus
-				|   
-				a.list-group-item.list-group-item-info(href='#') Porta ac consectetur ac
-				|   
-				a.list-group-item.list-group-item-info(href='#') Vestibulum at eros
-				|   
-				a.list-group-item.list-group-item-info(href='#') Dapibus ac facilisis in
-				|   
-				a.list-group-item.list-group-item-info(href='#') Morbi leo risus
-				|   
-				a.list-group-item.list-group-item-info(href='#') Porta ac consectetur ac
-				|   
-				a.list-group-item.list-group-item-info(href='#') Vestibulum at eros
-				|   
-				a.list-group-item.list-group-item-info(href='#') Dapibus ac facilisis in
-				|   
-				a.list-group-item.list-group-item-info(href='#') Morbi leo risus
-				|   
-				a.list-group-item.list-group-item-info(href='#') Porta ac consectetur ac
-				|   
-				a.list-group-item.list-group-item-info(href='#') Vestibulum at eros
+	h2 Adventures
+	form#new-adventure
+		h1 Add an Adventure
+		.form-group
+			input.adventure-name.form-control(type="text", value="unicycle", placeholder="adventure name...")
+		.form-group
+			input.adventure-latlng.form-control(type="number", step="any",  value="322332.3223", placeholder="location...")
+		.form-group
+			input.adventure-type.form-control(type="text", value="biking", placeholder="adventure Type...")
+		.form-group
+			input.adventure-date.form-control(type="date", value="2014-03-01", placeholder="date...")
+		.form-group
+			input.adventure-imgUrl.form-control(type="url", value="http://ecx.images-amazon.com/images/I/71BSGr77P2L._SL1500_.jpg", placeholder="image...")
+		.form-group
+			input.adventure-description.form-control(type="text", value="unnecessary challenge", placeholder="adventure desctiption")
+		.form-group
+			input.adventure-rating.form-control(type="number", value="2", placeholder="adventure rating")
+		.modal-footer
+			input.btn.btn-primary(type="submit", value="Save Changes")
+	ul#adventure-list
+		li.adventure
+		//- for adventure in Adventures
+		//- 	li.adventure(data-id="#{adventure._id}")
+		//- 		strong= adventure.name
+		//- 		| &nbsp;
+		//- 		a.view(href="#") view
+		//- 		|  - 
+		//- 		a.edit(href="#") edit
+		//- 		|  - 
+		//- 		a.delete(href="#") delete
+	#view-modal.modal.fade
+		.modal-dialog
+			.modal-content
+				.modal-header
+					button.close(type="button", data-dismiss="modal")
+						span &times;
+					h4.modal-title View a adventure
+				.modal-body
+					h5.adventure-name Adventure Name
+					em.adventure-latlng Location 
+					p.adventure-type Type
+					p.adventure-date Date 
+					.adventure-imgUrl 
+					p.adventure-description
+					p.adventure-rating
+					
+					
+	#edit-modal.modal.fade
+		.modal-dialog
+			.modal-content
+				.modal-header
+					button.close(type="button", data-dismiss="modal")
+						span &times;
+					h4.modal-title Edit a adventure
+				form#edit-form
+					input.adventure-id(type="hidden")
+					.modal-body
+						.form-group
+							input.adventure-name.form-control(type="text", placeholder="adventure name...")
+						.form-group
+							input.adventure-latlng.form-control(type="number", step="any", placeholder="location...")
+						.form-group
+							input.adventure-type.form-control(type="text", placeholder="adventure Type...")
+						.form-group
+							input.adventure-date.form-control(type="date", placeholder="date...")
+						.form-group
+							input.adventure-imgUrl.form-control(type="url", placeholder="image...")
+						.form-group
+							input.adventure-description.form-control(type="text", placeholder="adventure desctiption")
+						.form-group
+							input.adventure-rating.form-control(type="number", placeholder="adventure rating")
+					.modal-footer
+						input.btn.btn-primary(type="submit", value="Save Changes")

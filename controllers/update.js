@@ -19,7 +19,7 @@ var updateController = {
 	  });
 	},
 
-	getAdventures: function(req, res){
+	getAdventure: function(req, res){
 	  
 	  var adventureId = req.params.adventure_id;
 	  // Find the given ID in the database
@@ -39,4 +39,4 @@ var updateController = {
 	}
 };
 
-module.exports = updateController:
+module.exports = updateController;
