@@ -59,8 +59,8 @@ var adventureView = function(e){
     $('#view-modal .adventure-latlng').text(data.latlng);
     $('#view-modal .adventure-type').text(data.type);
     $('#view-modal .adventure-date').text(data.date);
-    $('#view-modal .adventure-imgUrl').append('<img src="' + data.imageUrl + '">');
-    $('#view-modal .adventure-imgUrl').replaceWith('<img src="' + data.imageUrl + '">');
+    $('#view-modal .adventure-imgUrl').html('<img src="' + data.imageUrl + '">');
+    // $('#view-modal .adventure-imgUrl').replaceWith('<img src="' + data.imageUrl + '">');
     $('#view-modal .adventure-description').text(data.description);
     $('#view-modal .adventure-rating').text(data.rating);
   });
