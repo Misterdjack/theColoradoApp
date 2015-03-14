@@ -11,6 +11,11 @@
 	width: 80%
 }
 
+#adventure-list img, #view-modal img{
+	width: 80%;
+	padding: 10px
+}
+
 .panel {
 	background-color: #002868;
 	color:   #FCFB00

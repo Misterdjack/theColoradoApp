@@ -33,30 +33,31 @@ block content
 			input.adventure-rating.form-control(type="number", value="2", placeholder="adventure rating")
 		.modal-footer
 			input.btn.btn-primary(type="submit", value="Save Changes")
+	#my-adventure
 	ul#adventure-list
-		li.adventure
-		//- for adventure in Adventures
-		//- 	li.adventure(data-id="#{adventure._id}")
-		//- 		strong= adventure.name
-		//- 		| &nbsp;
-		//- 		a.view(href="#") view
-		//- 		|  - 
-		//- 		a.edit(href="#") edit
-		//- 		|  - 
-		//- 		a.delete(href="#") delete
+		h1.text-center YOUR ADVENTURES
+		for adventure in adventures
+			li.adventure(data-id="#{adventure._id}")
+				strong= adventure.name
+				| &nbsp;
+				a.view(href="#") view
+				|  - 
+				a.edit(href="#") edit
+				|  - 
+				a.delete(href="#") delete
 	#view-modal.modal.fade
 		.modal-dialog
 			.modal-content
 				.modal-header
 					button.close(type="button", data-dismiss="modal")
 						span &times;
-					h4.modal-title View a adventure
+					h4.modal-title View an adventure
 				.modal-body
 					h5.adventure-name Adventure Name
 					em.adventure-latlng Location 
 					p.adventure-type Type
 					p.adventure-date Date 
-					.adventure-imgUrl 
+					p.adventure-imgUrl
 					p.adventure-description
 					p.adventure-rating
 					

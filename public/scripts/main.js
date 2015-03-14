@@ -22,7 +22,7 @@ var onAdventureSubmit = function(e){
   $.post('/update/addAdventure', newAdventureData, function(data){
     console.log('data:', data);
 
-    var link = $('<a>').attr('href', data.imageUrl)
+    var link = $('<img>').attr('src', data.imageUrl)
 
     var listItem = $('<li>').text(data.name)
     
@@ -54,12 +54,13 @@ var adventureView = function(e){
   var adventureElement = $(this).closest('.adventure');
   var targetId = adventureElement.attr('data-id');
 
-  $.get('/api/getAdventure/' + targetId, function(data){
+  $.get('/update/getAdventure/' + targetId, function(data){
     $('#view-modal .adventure-name').text(data.name);
     $('#view-modal .adventure-latlng').text(data.latlng);
     $('#view-modal .adventure-type').text(data.type);
     $('#view-modal .adventure-date').text(data.date);
-    $('#view-modal .adventure-imgUrl').text(data.imageUrl);
+    $('#view-modal .adventure-imgUrl').append('<img src="' + data.imageUrl + '">');
+    $('#view-modal .adventure-imgUrl').replaceWith('<img src="' + data.imageUrl + '">');
     $('#view-modal .adventure-description').text(data.description);
     $('#view-modal .adventure-rating').text(data.rating);
   });
@@ -71,10 +72,10 @@ var adventureEdit = function(e){
 
   $('#edit-modal').modal('show');
 
-  var adventureElement = $(this).closest('.Adventure');
+  var adventureElement = $(this).closest('.adventure');
   var targetId = adventureElement.attr('data-id');
 
-  $.get('/api/getAdventure/' + targetId, function(data){
+  $.get('/update/getAdventure/' + targetId, function(data){
     $('#edit-modal .adventure-name').text(data.name);
     $('#edit-modal .adventure-latlng').text(data.latlng);
     $('#edit-modal .adventure-type').text(data.type);
@@ -101,7 +102,7 @@ var adventureEditSubmit = function(e){
 
   var targetId = $('#edit-modal .adventure-id').val();
 
-  $.post('/api/editAdventure/' + targetId, dataFromClient, function(data){
+  $.post('/update/editAdventure/' + targetId, dataFromClient, function(data){
     console.log(data);
 
     // Hide the modal in the end

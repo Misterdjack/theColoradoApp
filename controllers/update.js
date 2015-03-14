@@ -31,6 +31,7 @@ var updateController = {
 	},
 
 	editAdventure: function (req, res){
+		console.log(req.params.adventure_id);
 		var adventureId = req.params.adventure_id;
 		
 		Adventure.findByIdAndUpdate(adventureId, req.body, function(err, result){
