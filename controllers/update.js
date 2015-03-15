@@ -1,6 +1,18 @@
 var Adventure = require('../models/adventure.js');
 
 var updateController = {
+
+	renderAdventure: function(req, res) {
+
+		Adventure.find({}, function(err, result){
+
+			res.render('update', {
+				adventures: result
+			});
+		})
+		
+	},
+
 	addAdventure: function (req, res){
 		var newAdventure = req.body;
 

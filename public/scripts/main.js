@@ -21,14 +21,19 @@ var onAdventureSubmit = function(e){
 
   $.post('/update/addAdventure', newAdventureData, function(data){
     console.log('data:', data);
+    // Append name and image to the bottom
+    // var link = $('<img>').attr('src', data.imageUrl);
+    // var listItem = $('<li>').text(data.name);
+    // var postAdventure = listItem.append(link);
 
-    var link = $('<img>').attr('src', data.imageUrl)
+    // $('#adventure-list').append(postAdventure);
 
-    var listItem = $('<li>').text(data.name)
-    
-    link.append(listItem)
+    // Clone the first adventure in the list, there must be at least one
+    var newAdventureEl = $('.adventure').first().clone();
+    newAdventureEl.find('strong').text(data.name);
+    newAdventureEl.attr('data-id', data._id);
 
-    $('#adventure-list').append(link)
+    $('#adventure-list').append(newAdventureEl);
 
   });
 };
@@ -60,7 +65,6 @@ var adventureView = function(e){
     $('#view-modal .adventure-type').text(data.type);
     $('#view-modal .adventure-date').text(data.date);
     $('#view-modal .adventure-imgUrl').html('<img src="' + data.imageUrl + '">');
-    // $('#view-modal .adventure-imgUrl').replaceWith('<img src="' + data.imageUrl + '">');
     $('#view-modal .adventure-description').text(data.description);
     $('#view-modal .adventure-rating').text(data.rating);
   });
