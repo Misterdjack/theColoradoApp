@@ -1,4 +1,6 @@
-// CLIENT-SIDE
+/////////////////
+// CLIENT-SIDE //
+/////////////////
 
 // Form Submission
 var onAdventureSubmit = function(e){
@@ -121,6 +123,9 @@ var adventureEditSubmit = function(e){
 
 // Initialize the event listeners
 $(document).on('ready', function(){
+
+  // Bootstrap Material Design
+  $.material.init();
 
   $('#new-adventure').on('submit', onAdventureSubmit);
 

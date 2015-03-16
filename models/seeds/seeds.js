@@ -1,7 +1,7 @@
 var Adventure = require('../adventure.js');
 
-adventure.find({}, function(err, documents){
-  if(documents.length === 0){
+adventure.find({}, function(err, result){
+  if(result.length === 0){
 
     var berthoudPass = new adventure({
       name: 'Berthoud Pass',

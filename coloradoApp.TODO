@@ -2,6 +2,7 @@
      ✔ Create new controller @done (15-03-14 19:45)
      ✔ Create new route @done (15-03-14 19:45)
  ☐ Create Splash Page
+ ☐ Add material design
  ☐ Add passport authentication
      ☐ In Jade file e.g. if user the a(href="/update")
                                    res.render('adventures' {

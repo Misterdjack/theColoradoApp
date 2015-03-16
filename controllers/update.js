@@ -4,10 +4,10 @@ var updateController = {
 
 	renderAdventure: function(req, res) {
 
-		Adventure.find({}, function(err, result){
+		Adventure.find({}, function(err, docs){
 
 			res.render('update', {
-				adventures: result
+				adventures: docs
 			});
 		})
 		

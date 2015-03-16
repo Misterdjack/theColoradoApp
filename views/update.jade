@@ -32,7 +32,7 @@ block content
 		.form-group
 			input.adventure-rating.form-control(type="number", value="2", placeholder="adventure rating")
 		.modal-footer
-			input.btn.btn-primary(type="submit", value="Save Changes")
+			input.btn.btn-primary(type="submit", value="Save")
 	#my-adventure
 	ul#adventure-list
 		h1.text-center MY ADVENTURES
@@ -40,11 +40,11 @@ block content
 			li.adventure(data-id="#{adventure._id}")
 				strong= adventure.name
 				| &nbsp;
-				a.view(href="#") view
+				a.btn.btn-primary.view(href="#") view
 				|  - 
-				a.edit(href="#") edit
+				a.btn.btn-primary.edit(href="#") edit
 				|  - 
-				a.delete(href="#") delete
+				a.btn.btn-primary.delete(href="#") delete
 	#view-modal.modal.fade
 		.modal-dialog
 			.modal-content
