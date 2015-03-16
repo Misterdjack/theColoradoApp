@@ -32,9 +32,11 @@ block content
 		.form-group
 			input.adventure-rating.form-control(type="number", value="2", placeholder="adventure rating")
 		.modal-footer
-			input.btn.btn-primary(type="submit", value="Save")
+			input.btn.btn-primary(type="submit", value="Save Current Location")
+		.modal-footer
+			input.btn.btn-primary(type="submit", value="Save from a different location")
 	#my-adventure
-	ul#adventure-list
+	ul#adventure-list.text-center
 		h1.text-center MY ADVENTURES
 		for adventure in adventures
 			li.adventure(data-id="#{adventure._id}")
