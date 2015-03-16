@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // Index route
 app.get('/', indexController.index);
+app.get('/view/:type?', indexController.view);
 
 // Update routes
 app.get('/update', updateController.renderAdventure);
@@ -25,7 +26,7 @@ app.get('/update/getAdventure/:adventure_id', updateController.getAdventure);
 app.post('/update/editAdventure/:adventure_id', updateController.editAdventure);
 
 // Map route
-app.get('/map', mapController.map);
+// app.get('/map', mapController.map);
 
 var server = app.listen(7194, function() {
 	console.log('Express server listening on port ' + server.address().port);

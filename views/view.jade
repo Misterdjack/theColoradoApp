@@ -1,0 +1,15 @@
+extends layout
+// Set the view for maps
+
+block content
+	.panel.panel-default
+		.panel-body.text-center
+			h1.text-info The Colorado App
+	.container-fluid
+		.list-group
+			for adventure in adventures
+				li.adventure(data-id="#{adventure._id}")
+					strong= adventure.name	
+
+
+

@@ -4,11 +4,31 @@ var indexController = {
 	
 	index: function(req, res) {
 		Adventure.find({}, function(err, docs){
+		// Adventure.find({coords : { $near : [req.params.lon, req.params.lat], function(err, docs){
 
 			res.render('index', {
 				adventures: docs
 			});
-		})
+		});
+	},
+
+	view: function(req, res) {
+
+		if (!req.params.type) {
+			Adventure.find({}, function(err, docs){
+				res.render('view', {
+					adventures: docs
+				});
+			});
+		}
+		else {
+			Adventure.find({type: req.params.type}, function(err, docs){
+				res.render('view', {
+					adventures: docs
+				});
+			});
+		}
+
 	}
 };
 

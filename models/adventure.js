@@ -1,12 +1,14 @@
 var mongoose = require('mongoose');
 
 var adventureSchema = mongoose.Schema({
-  name: String,
-  latlng: Number,
   type: String,
+  name: String,
+  longitude: Number,
+  latitude: Number,
+  coords: [Number, Number],
   date: {
     type: Date,
-    default: new Date()
+    default: Date.now
   },
   imageUrl: String,
   description: String,

@@ -18,11 +18,19 @@ block content
 	form#new-adventure
 		h1 Add an Adventure
 		.form-group
+			select.form-control.adventure-type
+				option(value="trails") Trails
+				option(value="snow") Snow
+				option(value="biking") Biking
+				option(value="adrenaline") Adrenaline
+				option(value="geoCache") GeoCache
+				option(value="cityLife") City Life
+				option(value="brewery") Brewery
+				option(value="generalShenanigans") General Shenanigans
+		.form-group
 			input.adventure-name.form-control(type="text", value="unicycle", placeholder="adventure name...")
 		.form-group
 			input.adventure-latlng.form-control(type="number", step="any",  value="322332.3223", placeholder="location...")
-		.form-group
-			input.adventure-type.form-control(type="text", value="biking", placeholder="adventure Type...")
 		.form-group
 			input.adventure-date.form-control(type="date", value="2014-03-01", placeholder="date...")
 		.form-group
@@ -32,9 +40,11 @@ block content
 		.form-group
 			input.adventure-rating.form-control(type="number", value="2", placeholder="adventure rating")
 		.modal-footer
-			input.btn.btn-primary(type="submit", value="Save Current Location")
+			input.btn.btn-primary(type="submit", value="Save From Current Location")
 		.modal-footer
 			input.btn.btn-primary(type="submit", value="Save from a different location")
+	#mapcontainer
+		#map-canvas
 	#my-adventure
 	ul#adventure-list.text-center
 		h1.text-center MY ADVENTURES
@@ -90,3 +100,6 @@ block content
 							input.adventure-rating.form-control(type="number", placeholder="adventure rating")
 					.modal-footer
 						input.btn.btn-primary(type="submit", value="Save Changes")
+
+block scripts
+	script(src="/scripts/map.js")

@@ -2,28 +2,9 @@ extends layout
 // Set the view for maps
 
 block content
-	.container-fluid
-		h1.text-center.text-info The Colorado App
-
-	h2 Adventures
-	form#new-adventure
-		h1 Add an Adventure
-		.form-group
-			input.adventure-name.form-control(type="text", value="unicycle", placeholder="adventure name...")
-		.form-group
-			input.adventure-latlng.form-control(type="number", step="any",  value="322332.3223", placeholder="location...")
-		.form-group
-			input.adventure-type.form-control(type="text", value="biking", placeholder="adventure Type...")
-		.form-group
-			input.adventure-date.form-control(type="date", value="2014-03-01", placeholder="date...")
-		.form-group
-			input.adventure-imgUrl.form-control(type="url", value="http://ecx.images-amazon.com/images/I/71BSGr77P2L._SL1500_.jpg", placeholder="image...")
-		.form-group
-			input.adventure-description.form-control(type="text", value="unnecessary challenge", placeholder="adventure desctiption")
-		.form-group
-			input.adventure-rating.form-control(type="number", value="2", placeholder="adventure rating")
-		.modal-footer
-			input.btn.btn-primary(type="submit", value="Save")
+	.panel.panel-default
+		.panel-body.text-center
+			h1.text-info The Colorado App
 	#view-modal.modal.fade
 		.modal-dialog
 			.modal-content
@@ -40,17 +21,20 @@ block content
 					p.adventure-description
 					p.adventure-rating
 	#adventure-list
-		h1.text-center SOME ADVENTURES NEAR YOU
-		//- for adventure in adventures
-		//- 	li.adventure(data-id="#{adventure._id}")
-		//- 			strong= adventure.name
-		//- 			| &nbsp;
-		//- 		a.btn.btn-primary.view(href="#") view
-		//- 		|  - 
-		//- 		a.btn.btn-primary.edit(href="#") edit
-		//- 		|  - 
-		//- 		a.btn.btn-primary.delete(href="#") delete
+		h1.text-center FIND YOUR ADVENTURE
+	#mapcontainer
+		#map-canvas
+	ul
+		li: a(href="/view/trails") Trails
+		li: a(href="/view/snow") Snow
+		li: a(href="/view/biking") Biking
+		li: a(href="/view/geoCache") GeoCaching
+		li: a(href="/view/adrenaline") Adrenaline
+		li: a(href="/view/cityLife") City Life
+		li: a(href="/view/brewery") Brewery
+		li: a(href="/view/generalShenanigans") General Shenanigans
 
 block scripts
 	script(src="/scripts/welcome.js")
+	script(src="/scripts/map.js")
 

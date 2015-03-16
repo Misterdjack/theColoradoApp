@@ -8,14 +8,16 @@ var onAdventureSubmit = function(e){
   e.preventDefault();
 
   var newAdventureData = {
+    type: $('.adventure-type').val(),
     name: $('.adventure-name').val(),
     latlng: $('.adventure-latlng').val(),
-    type: $('.adventure-type').val(),
     data: $('.adventure-date').val(),
     imageUrl: $('.adventure-imgUrl').val(),
     description: $('.adventure-description').val(),
     rating: $('.adventure-rating').val()
   };
+
+  console.log(newAdventureData.type);
 
   this.reset();
 
