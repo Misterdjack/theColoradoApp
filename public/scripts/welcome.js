@@ -78,7 +78,7 @@ $(document).on('ready', function(){
   // Handle view clicks
   $(document).on('click', '.view', adventureView);
 
-  // $(document).on('click', '.view', mapView);
+  // $(document).on('click', '.viewLocation', mapView);
 
 
 });

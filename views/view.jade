@@ -13,7 +13,7 @@ block content
 				strong.h1= adventure.name
 				| &nbsp;
 				a.btn.btn-primary.view(href="/view/#{adventure.type}/#{adventure._id}") view
-				a.btn.btn-primary.view(href="/view/#{adventure.type}/#{adventure.coords}") view location
+				a.btn.btn-primary.viewLocation(href="/map") view location
 
 	#view-modal.modal.fade
 		.modal-dialog
@@ -40,7 +40,7 @@ block content
 	//- 					#map-canvas
 
 
-	//- footer.footer Sticky Footer
+	footer.footer Sticky Footer
 
 block scripts
 	script(src="/scripts/welcome.js")

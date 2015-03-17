@@ -1,0 +1,14 @@
+extends layout
+// Set the view for maps
+
+block content
+	.panel.panel-default
+		.panel-body.text-center
+			h1.text-info The Colorado App
+	#mapcontainer
+		#map-canvas
+	
+	footer.footer Sticky Footer
+	
+block scripts
+	script(src="/scripts/map.js")
