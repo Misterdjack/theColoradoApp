@@ -6,7 +6,7 @@ var updateController = require('./controllers/update.js');
 
 // Mongoose
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/colorado-app');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/colorado-app');
 
 var app = express();
 app.set('view engine', 'jade');
@@ -21,7 +21,7 @@ app.get('/view/:adventure_type/:adventure_id', updateController.getAdventure)
 
 // Map route
 app.get('/map', mapController.map);
-app.get('/mapAdventures', mapController.mapAdventures);
+app.get('/mapAdventures/:lat/:lng', mapController.mapAdventures);
 
 
 // Update routes
