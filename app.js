@@ -21,7 +21,7 @@ app.get('/view/:adventure_type/:adventure_id', updateController.getAdventure)
 
 // Map route
 app.get('/map', mapController.map);
-app.get('/mapAdventures/:lat/:lng', mapController.mapAdventures);
+app.get('/mapAdventures', mapController.mapAdventures);
 
 
 // Update routes
