@@ -5,25 +5,8 @@ block content
 	.panel.panel-default
 		.panel-body.text-center
 			h1.text-info The Colorado App
-	#view-modal.modal.fade
-		.modal-dialog
-			.modal-content
-				.modal-header
-					button.close(type="button", data-dismiss="modal")
-						span &times;
-					h4.modal-title View an adventure
-				.modal-body
-					h5.adventure-name Adventure Name
-					em.adventure-latlng Location 
-					p.adventure-type Type
-					p.adventure-date Date 
-					p.text-center.adventure-imgUrl
-					p.adventure-description
-					p.adventure-rating
 	#adventure-list
 		h1.text-center FIND YOUR ADVENTURE
-	#mapcontainer
-		#map-canvas
 	ul
 		li: a(href="/view/trails") Trails
 		li: a(href="/view/snow") Snow
@@ -34,7 +17,8 @@ block content
 		li: a(href="/view/brewery") Brewery
 		li: a(href="/view/generalShenanigans") General Shenanigans
 
+	footer.footer Sticky Footer
+
 block scripts
 	script(src="/scripts/welcome.js")
-	script(src="/scripts/map.js")
 

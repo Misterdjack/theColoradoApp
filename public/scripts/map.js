@@ -79,7 +79,7 @@ var handleNoGeolocation=function(errorFlag) {
 // Add Marker //
 ////////////////
 var placeMarker = function(pos) {
-  var marker = new google.maps.Marker({
+  marker = new google.maps.Marker({
       position: pos, 
       map: map,
       draggable: true,

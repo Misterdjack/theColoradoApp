@@ -30,8 +30,6 @@ block content
 		.form-group
 			input.adventure-name.form-control(type="text", value="unicycle", placeholder="adventure name...")
 		.form-group
-			input.adventure-latlng.form-control(type="number", step="any",  value="322332.3223", placeholder="location...")
-		.form-group
 			input.adventure-date.form-control(type="date", value="2014-03-01", placeholder="date...")
 		.form-group
 			input.adventure-imgUrl.form-control(type="url", value="http://ecx.images-amazon.com/images/I/71BSGr77P2L._SL1500_.jpg", placeholder="image...")
@@ -40,9 +38,7 @@ block content
 		.form-group
 			input.adventure-rating.form-control(type="number", value="2", placeholder="adventure rating")
 		.modal-footer
-			input.btn.btn-primary(type="submit", value="Save From Current Location")
-		.modal-footer
-			input.btn.btn-primary(type="submit", value="Save from a different location")
+			input.btn.btn-primary(type="submit", value="Choose a location and Save")
 	#mapcontainer
 		#map-canvas
 	#my-adventure
@@ -66,12 +62,11 @@ block content
 					h4.modal-title View an adventure
 				.modal-body
 					h5.adventure-name Adventure Name
-					em.adventure-latlng Location 
 					p.adventure-type Type
-					p.adventure-date Date 
+					p.adventure-date Date
 					p.text-center.adventure-imgUrl
-					p.adventure-description
-					p.adventure-rating
+					p.adventure-description Desctiption
+					p.adventure-rating Rating
 					
 					
 	#edit-modal.modal.fade
@@ -80,14 +75,12 @@ block content
 				.modal-header
 					button.close(type="button", data-dismiss="modal")
 						span &times;
-					h4.modal-title Edit a adventure
+					h4.modal-title Edit an adventure
 				form#edit-form
 					input.adventure-id(type="hidden")
 					.modal-body
 						.form-group
 							input.adventure-name.form-control(type="text", placeholder="adventure name...")
-						.form-group
-							input.adventure-latlng.form-control(type="number", step="any", placeholder="location...")
 						.form-group
 							input.adventure-type.form-control(type="text", placeholder="adventure Type...")
 						.form-group
@@ -100,6 +93,10 @@ block content
 							input.adventure-rating.form-control(type="number", placeholder="adventure rating")
 					.modal-footer
 						input.btn.btn-primary(type="submit", value="Save Changes")
+	footer.footer Sticky Footer
 
 block scripts
 	script(src="/scripts/map.js")
+
+
+

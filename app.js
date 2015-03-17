@@ -12,11 +12,14 @@ var app = express();
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 
 // Index route
 app.get('/', indexController.index);
 app.get('/view/:type?', indexController.view);
+app.get('/view/:adventure_type/:adventure_id', updateController.getAdventure)
+// app.get('/view/:adventure_type/:adventure.coords', updateController.getAdventure)
+
 
 // Update routes
 app.get('/update', updateController.renderAdventure);

@@ -1,23 +1,23 @@
  ✔ Move add/view/delete tasks from index to update view @done (15-03-14 19:45)
      ✔ Create new controller @done (15-03-14 19:45)
      ✔ Create new route @done (15-03-14 19:45)
- ☐ Create Splash Page
- ☐ Add material design
- ☐ Add passport authentication
+ ✔ Create Splash Page @done (15-03-16 16:22)
+ ✔ Add material design @done (15-03-16 11:14)
+
      ☐ In Jade file e.g. if user the a(href="/update")
                                    res.render('adventures' {
                                       user: req.user
                                    })
- ☐ format schema to:
-     pos: {
-       lat: number,
-       long: number
-     }
- ☐ add filters for near me, near location, type, top rated (if time)
- ☐ Change type input to dropdown with categories
+ ☐ Add photo functionality to update page
+ ☐ format schema:
+     
+ ☐ 
+ ✔ Change type input to dropdown with categories @done (15-03-16 10:52)
  ☐ Put in styles
 
    Maybe for later
  ☐ add rating system
  ☐ social sharing
+ ☐ add filters for near me, near location, type, top rated (if time)
+ ☐ Add passport authentication
 

@@ -2,44 +2,47 @@
 // CLIENT-SIDE //
 /////////////////
 
+// marker.position.toUrlValue()
+
 // Form Submission
 var onAdventureSubmit = function(e){
 
   e.preventDefault();
+  
+  // Make sure a marker is set on map
+  if (marker) {
+    var coords =  marker.position.toUrlValue().split(',');
 
-  var newAdventureData = {
-    type: $('.adventure-type').val(),
-    name: $('.adventure-name').val(),
-    latlng: $('.adventure-latlng').val(),
-    data: $('.adventure-date').val(),
-    imageUrl: $('.adventure-imgUrl').val(),
-    description: $('.adventure-description').val(),
-    rating: $('.adventure-rating').val()
-  };
+    var newAdventureData = {
+      type: $('.adventure-type').val(),
+      name: $('.adventure-name').val(),
+      data: $('.adventure-date').val(),
+      imageUrl: $('.adventure-imgUrl').val(),
+      description: $('.adventure-description').val(),
+      rating: $('.adventure-rating').val(),
+      coords: {lat: coords[0], lng: coords[1]}
+    };
 
-  console.log(newAdventureData.type);
+    this.reset();
 
-  this.reset();
+    // console.log(marker.position.toUrlValue());
+    // Add validation here if necessary
 
-  // Add validation here if necessary
+    $.post('/update/addAdventure', newAdventureData, function(data){
+      // console.log(data);
+      // Clone the first adventure in the list, there must be at least one
+      var newAdventureEl = $('.adventure').first().clone();
+      newAdventureEl.find('strong').text(data.name);
+      newAdventureEl.attr('data-id', data._id);
 
-  $.post('/update/addAdventure', newAdventureData, function(data){
-    console.log('data:', data);
-    // Append name and image to the bottom
-    // var link = $('<img>').attr('src', data.imageUrl);
-    // var listItem = $('<li>').text(data.name);
-    // var postAdventure = listItem.append(link);
-
-    // $('#adventure-list').append(postAdventure);
-
-    // Clone the first adventure in the list, there must be at least one
-    var newAdventureEl = $('.adventure').first().clone();
-    newAdventureEl.find('strong').text(data.name);
-    newAdventureEl.attr('data-id', data._id);
-
-    $('#adventure-list').append(newAdventureEl);
-
-  });
+      $('#adventure-list').append(newAdventureEl);
+      
+      console.log(data)
+    });
+  }
+  else {
+    alert('Please select a location on the map');
+  }
 };
 
 // Handle Delete
@@ -64,9 +67,8 @@ var adventureView = function(e){
   var targetId = adventureElement.attr('data-id');
 
   $.get('/update/getAdventure/' + targetId, function(data){
-    $('#view-modal .adventure-name').text(data.name);
-    $('#view-modal .adventure-latlng').text(data.latlng);
     $('#view-modal .adventure-type').text(data.type);
+    $('#view-modal .adventure-name').text(data.name);
     $('#view-modal .adventure-date').text(data.date);
     $('#view-modal .adventure-imgUrl').html('<img src="' + data.imageUrl + '">');
     $('#view-modal .adventure-description').text(data.description);
@@ -84,9 +86,8 @@ var adventureEdit = function(e){
   var targetId = adventureElement.attr('data-id');
 
   $.get('/update/getAdventure/' + targetId, function(data){
-    $('#edit-modal .adventure-name').text(data.name);
-    $('#edit-modal .adventure-latlng').text(data.latlng);
     $('#edit-modal .adventure-type').text(data.type);
+    $('#edit-modal .adventure-name').text(data.name);
     $('#edit-modal .adventure-date').text(data.date);
     $('#edit-modal .adventure-imgUrl').text(data.imageUrl);
     $('#edit-modal .adventure-description').text(data.description);
@@ -99,9 +100,8 @@ var adventureEditSubmit = function(e){
   e.preventDefault();
 
   var dataFromClient = {
-    name: $('#edit-modal .adventure-name').val(),
-    latlng: $('#edit-modal .adventure-latlng').val(),
     type: $('#edit-modal .adventure-type').val(),
+    name: $('#edit-modal .adventure-name').val(),
     date: $('#edit-modal .adventure-date').val(),
     imageUrl: $('#edit-modal .adventure-imgUrl').val(),
     description: $('#edit-modal .adventure-description').val(),

@@ -15,7 +15,7 @@ var updateController = {
 
 	addAdventure: function (req, res){
 		var newAdventure = req.body;
-
+		
 		var adventure = new Adventure(newAdventure);
 
 		adventure.save(function(err, savedAdventure){

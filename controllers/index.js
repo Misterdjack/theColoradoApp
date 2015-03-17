@@ -22,7 +22,7 @@ var indexController = {
 			});
 		}
 		else {
-			Adventure.find({type: req.params.type}, function(err, docs){
+			Adventure.find({type: req.params.type, coords: {$near: {lat: 40, lng: -105}, $maxDistance : .23}}, function(err, docs){
 				res.render('view', {
 					adventures: docs
 				});
@@ -30,6 +30,7 @@ var indexController = {
 		}
 
 	}
+
 };
 
 module.exports = indexController;

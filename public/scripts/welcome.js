@@ -42,7 +42,7 @@ var adventureView = function(e){
   var adventureElement = $(this).closest('.adventure');
   var targetId = adventureElement.attr('data-id');
 
-  $.get('/update/getAdventure/' + targetId, function(data){
+  $.get($(this).attr('href'), function(data){
     $('#view-modal .adventure-name').text(data.name);
     $('#view-modal .adventure-latlng').text(data.latlng);
     $('#view-modal .adventure-type').text(data.type);
@@ -53,6 +53,18 @@ var adventureView = function(e){
   });
 };
 
+// var mapView = function(e){
+//   e.preventDefault();
+
+//   $('#viewMap-modal').modal('show');
+
+//   var adventureElement = $(this).closest('.adventure');
+//   var targetId = adventureElement.attr('data-id');
+
+//   $.get($(this).attr('href'), function(data){
+    
+//   });
+// };
 
 
 // Initialize the event listeners
@@ -65,6 +77,8 @@ $(document).on('ready', function(){
 
   // Handle view clicks
   $(document).on('click', '.view', adventureView);
+
+  // $(document).on('click', '.view', mapView);
 
 
 });
