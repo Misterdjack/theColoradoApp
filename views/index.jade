@@ -3,7 +3,7 @@ extends layout
 
 block content
 	.panel.panel-default
-		.panel-body.text-center
+		.panel-body.text-center.panel-material-light-blue
 			h1.text-info The Colorado App
 	#adventure-list
 		h1.text-center FIND ADVENTURES NEAR YOU
@@ -16,6 +16,10 @@ block content
 		li: a(href="/view/cityLife") City Life
 		li: a(href="/view/brewery") Brewery
 		li: a(href="/view/generalShenanigans") General Shenanigans
+
+		h1.text-center FIND ADVENTURES NEAR A DIFFERENT LOCATION
+	ul
+		li: a(href="/mapAdventures") Set Location on Map
 
 	footer.footer Sticky Footer
 

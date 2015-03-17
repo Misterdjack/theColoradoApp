@@ -18,7 +18,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.get('/', indexController.index);
 app.get('/view/:type?', indexController.view);
 app.get('/view/:adventure_type/:adventure_id', updateController.getAdventure)
-app.get('/map', mapController.map)
+
+// Map route
+app.get('/map', mapController.map);
+app.get('/mapAdventures/:lat/:lng', mapController.mapAdventures);
 
 
 // Update routes

@@ -14,8 +14,9 @@ var initialize= function() {
 
   // console.log(adventures.coords);
   
+
   var mapOptions = {
-    zoom: 15,
+    zoom: 10,
     // additional options here
   };
 
@@ -92,9 +93,11 @@ var placeMarker = function(pos) {
   marker.setMap(map);
 
 
-  // $.get({
-     // Ajax call to be put in later persist to database e.g. may need a toJson method in google documentation
+  // $.get({'/mapAdventures/' + coords.lat + coords.lng, function(data){
+  //    // Ajax call to be put in later persist to database e.g. may need a toJson method in google documentation
+      
   // });
+
 };
 
 
@@ -102,7 +105,12 @@ var placeMarker = function(pos) {
 //////////////////////////////
 // Vanilla JS DOM rendering //
 //////////////////////////////
-google.maps.event.addDomListener(window, 'load', initialize);
+  
+   // Ajax call to be put in later persist to database e.g. may need a toJson method in google documentation
+   
+   // Map load callback to get adventures from DB first
+   google.maps.event.addDomListener(window, 'load', initialize);
+
 
 
 
