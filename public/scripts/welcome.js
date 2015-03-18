@@ -39,12 +39,12 @@ var adventureView = function(e){
 
   $('#view-modal').modal('show');
 
-  var adventureElement = $(this).closest('.adventure');
-  var targetId = adventureElement.attr('data-id');
-
+  // var adventureElement = $(this).closest('.adventure');
+  // var targetId = adventureElement.attr('data-id');
+  console.log($(this));
   $.get($(this).attr('href'), function(data){
     $('#view-modal .adventure-name').text(data.name);
-    $('#view-modal .adventure-latlng').text(data.latlng);
+    // $('#view-modal .adventure-latlng').text(data.latlng);
     $('#view-modal .adventure-type').text(data.type);
     $('#view-modal .adventure-date').text(data.date);
     $('#view-modal .adventure-imgUrl').html('<img src="' + data.imageUrl + '">');
@@ -53,6 +53,24 @@ var adventureView = function(e){
   });
 };
 
+var adventureViewMap = function(e){
+  e.preventDefault();
+
+  $('#view-modal').modal('show');
+
+  // var adventureElement = $(this).closest('.adventure');
+  // var targetId = adventureElement.attr('data-id');
+  console.log($(this));
+  $.get($(this).attr('href'), function(data){
+    $('#view-modal .adventure-name').text(data.name);
+    // $('#view-modal .adventure-latlng').text(data.latlng);
+    $('#view-modal .adventure-type').text(data.type);
+    $('#view-modal .adventure-date').text(data.date);
+    $('#view-modal .adventure-imgUrl').html('<img src="' + data.imageUrl + '">');
+    $('#view-modal .adventure-description').text(data.description);
+    $('#view-modal .adventure-rating').text(data.rating);
+  });
+};
 // var mapView = function(e){
 //   e.preventDefault();
 
@@ -78,6 +96,7 @@ $(document).on('ready', function(){
   // Handle view clicks
   $(document).on('click', '.view', adventureView);
 
+  // $(document).on('click', '.adventure', adventureViewMap);
   // $(document).on('click', '.viewLocation', mapView);
 
 

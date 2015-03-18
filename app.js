@@ -22,7 +22,7 @@ app.get('/view/:adventure_type/:adventure_id', updateController.getAdventure)
 // Map route
 // app.get('/map', mapController.map);
 app.get('/mapAdventures', mapController.mapAdventures);
-// app.get('/mapAdventures/:adventure_type/:adventure_id', updateController.getAdventure)
+app.get('/mapAdventures/:adventure_type/:adventure_id', updateController.getAdventure)
 
 // Update routes
 app.get('/update', updateController.renderAdventure);
