@@ -5,7 +5,7 @@
 // Global Variables
 var map;
 var marker;
-var pos;
+var poslatlng;
 
 /////////////////////////
 // Create map for load //
@@ -88,6 +88,7 @@ var placeMarker = function(pos) {
       animation: google.maps.Animation.DROP
   });
 
+  poslatlng= pos;
   // map.setCenter(pos);
   marker.setMap(map);
 

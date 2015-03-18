@@ -2,19 +2,9 @@ extends layout
 // Set the view for maps
 
 block content
-	.container-fluid
-		.list-group
-			a.list-group-item.active(href='#')
-				| Cras justo odio
-				|   
-				a.list-group-item.list-group-item-info(href='#') Dapibus ac facilisis in
-				|   
-				a.list-group-item.list-group-item-info(href='#') Morbi leo risus
-				|   
-				a.list-group-item.list-group-item-info(href='#') Porta ac consectetur ac
-				|   
-				a.list-group-item.list-group-item-info(href='#') Vestibulum at eros
-	h2 Adventures
+	.panel.panel-default
+		.panel-body.text-center
+			h1.text-info The Colorado App	
 	form#new-adventure
 		h1 Add an Adventure
 		.form-group
@@ -38,21 +28,21 @@ block content
 		.form-group
 			input.adventure-rating.form-control(type="number", value="2", placeholder="adventure rating")
 		.modal-footer
-			input.btn.btn-primary(type="submit", value="Choose a location and Save")
+			input.btn.btn-info(type="submit", value="Choose a location and Save")
 	#mapcontainer
 		#map-canvas
 	#my-adventure
 	ul#adventure-list.text-center
-		h1.text-center MY ADVENTURES
+		h1.text-center YOUR ADVENTURES
 		for adventure in adventures
 			li.adventure(data-id="#{adventure._id}")
 				strong= adventure.name
 				| &nbsp;
-				a.btn.btn-primary.view(href="#") view
+				a.btn.btn-info.view(href="#") view
 				|  - 
-				a.btn.btn-primary.edit(href="#") edit
+				a.btn.btn-info.edit(href="#") edit
 				|  - 
-				a.btn.btn-primary.delete(href="#") delete
+				a.btn.btn-info.delete(href="#") delete
 	#view-modal.modal.fade
 		.modal-dialog
 			.modal-content

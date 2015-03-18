@@ -11,7 +11,9 @@ var onAdventureSubmit = function(e){
   
   // Make sure a marker is set on map
   if (marker) {
-    var coords =  marker.position.toUrlValue().split(',');
+    var poslatlng =  marker.position.toUrlValue().split(',');
+
+    console.log(poslatlng);
 
     var newAdventureData = {
       type: $('.adventure-type').val(),
@@ -20,7 +22,7 @@ var onAdventureSubmit = function(e){
       imageUrl: $('.adventure-imgUrl').val(),
       description: $('.adventure-description').val(),
       rating: $('.adventure-rating').val(),
-      coords: {lat: coords[0], lng: coords[1]}
+      coords: {lat: poslatlng[0], lng: poslatlng[1]}
     };
 
     this.reset();

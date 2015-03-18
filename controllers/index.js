@@ -21,8 +21,12 @@ var indexController = {
 				});
 			});
 		}
+		
 		else {
 			Adventure.find({type: req.params.type, coords: {$near: {lat: 40, lng: -105}, $maxDistance : .23}}, function(err, docs){
+			// If geolocation is allowed use
+			// Adventure.find({type: req.params.type, coords: {$near: {lat: req.params.lat, lng: req.params.lng}, $maxDistance : 8046}}, function(err, docs){
+
 				res.render('view', {
 					adventures: docs
 				});

@@ -17,12 +17,19 @@ block content
 		li: a(href="/view/brewery") Brewery
 		li: a(href="/view/generalShenanigans") General Shenanigans
 
-		h1.text-center FIND ADVENTURES NEAR A DIFFERENT LOCATION
+		h1.text-center FIND BY LOCATION
 	ul
-		li: a(href="/mapAdventures") Set Location on Map
-
-	footer.footer Sticky Footer
+		li: a(href="/mapAdventures") SEARCH ON MAP
+	.icon-preview
+		i.mdi-image-filter-hdr
+			span 
+	footer.footer
+		.icon-preview
+			i.mdi-image-filter-hdr
+				span 
+		
 
 block scripts
 	script(src="/scripts/welcome.js")
+	script(src="/scripts/main.js")
 

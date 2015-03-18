@@ -9,19 +9,14 @@ var mapController = {
 	},
 
 	mapAdventures: function(req, res) {
-		
-				Adventure.find({type: req.params.type, coords: {$near: {lat: 40, lng: -105}, $maxDistance : .23}}, function(err, docs){
-					
-					var closeCoords = docs.map(function(doc){
-						return doc.coords;
-					});
+			// Adventure.find({type: req.params.type, coords: {$near: {lat: req.params.lat, lng: req.params.lng}, $maxDistance : 8046}}, function(err, docs){
+			Adventure.find({}, function(err, docs){
+			// Adventure.find({coords : { $near : [req.params.lon, req.params.lat], function(err, docs){
 
-
-					res.render('mapAdventures', {
-						adventures: closeCoords
-					});
+				res.render('mapAdventures', {
+					adventures: docs
 				});
-			
+			});
 	}
 
 };

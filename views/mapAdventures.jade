@@ -5,11 +5,36 @@ block content
 	.panel.panel-default
 		.panel-body.text-center
 			h1.text-info The Colorado App
-	#mapcontainer
-		#map-canvas
-	
+	#map-container.container.h1.text-center Locations
+		#map-gcanvas
+	#my-adventure.container.h1.text-center Adventures
+		#adventure-list.list-group.text-center
+			for adventure in adventures
+				li.adventure(data-id= adventure._id, data-link="/view/#{adventure.type}/#{adventure._id}", data-coords= adventure.coords.lat +','+ adventure.coords.lng, data-name= adventure.name, )
+				img(src=adventure.imageUrl)
+				strong.h1= adventure.name
+				| &nbsp;
+				a.btn.btn-info.view(href="/view/#{adventure.type}/#{adventure._id}") view
+
+	#view-modal.modal.fade
+		.modal-dialog
+			.modal-content
+				.modal-header
+					button.close(type="button", data-dismiss="modal")
+						span &times;
+					h4.modal-title View an adventure
+				.modal-body
+					h5.adventure-name Adventure Name
+					p.adventure-type Type
+					p.adventure-date Date 
+					p.text-center.adventure-imgUrl
+					p.adventure-description
+					p.adventure-rating
+
 	footer.footer Sticky Footer
 
 block scripts
+	script(src="/scripts/main.js")
+	script(src="/scripts/welcome.js")
 	script(src="/scripts/gmaps.js")
 	script(src="/scripts/gmapper.js")
