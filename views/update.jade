@@ -3,10 +3,10 @@ extends layout
 
 block content
 	.panel.panel-default
-		.panel-body.text-center
-			h1.text-info The Colorado App	
+		.panel-body.text-center.blue-2
+			h1.text-info.mdi-image-filter-hdr   The Colorado App
 	form#new-adventure
-		h1 Add an Adventure
+		h1.text-info Add an Adventure
 		.form-group
 			select.form-control.adventure-type
 				option(value="trails") Trails
@@ -18,24 +18,25 @@ block content
 				option(value="brewery") Brewery
 				option(value="generalShenanigans") General Shenanigans
 		.form-group
-			input.adventure-name.form-control(type="text", value="unicycle", placeholder="adventure name...")
+			input.adventure-name.form-control(type="text", placeholder="adventure name...")
 		.form-group
-			input.adventure-date.form-control(type="date", value="2014-03-01", placeholder="date...")
+			input.adventure-date.form-control(type="date", placeholder="date...")
 		.form-group
-			input.adventure-imgUrl.form-control(type="url", value="http://ecx.images-amazon.com/images/I/71BSGr77P2L._SL1500_.jpg", placeholder="image...")
+			input.adventure-imgUrl.form-control(type="url", placeholder="image...")
 		.form-group
-			input.adventure-description.form-control(type="text", value="unnecessary challenge", placeholder="adventure desctiption")
+			input.adventure-description.form-control(type="text", placeholder="adventure desctiption")
 		.form-group
-			input.adventure-rating.form-control(type="number", value="2", placeholder="adventure rating")
+			input.adventure-rating.form-control(type="number", placeholder="adventure rating")
 		.modal-footer
 			input.btn.btn-info(type="submit", value="Choose a location and Save")
 	#mapcontainer
-		#map-canvas
+		#map-inner-container
+			#map-canvas
 	#my-adventure
 	ul#adventure-list.text-center
 		h1.text-center YOUR ADVENTURES
 		for adventure in adventures
-			li.adventure(data-id="#{adventure._id}")
+			.btn.adventure(data-id="#{adventure._id}")
 				strong= adventure.name
 				| &nbsp;
 				a.btn.btn-info.view(href="#") view
@@ -83,7 +84,12 @@ block content
 							input.adventure-rating.form-control(type="number", placeholder="adventure rating")
 					.modal-footer
 						input.btn.btn-primary(type="submit", value="Save Changes")
-	footer.footer Sticky Footer
+	footer.footer.btn-group.btn-group-justified
+		a(title= "SEARCH BY MAP", href="/mapAdventures").btn.icon.mdi-action-language
+		a(title= "MAKE YOUR OWN ADVENTURE", href="/update").btn.icon.mdi-content-add
+		//- a(href="/mapAdventures").btn.icon.mdi-image-filter-hdr
+		//- a(href="/mapAdventures").btn.icon.mdi-image-filter-hdr
+		a(title= "HOME", href="/").btn.icon.mdi-image-filter-hdr
 
 block scripts
 	script(src="/scripts/map.js")

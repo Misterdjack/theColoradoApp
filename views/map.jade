@@ -3,12 +3,16 @@ extends layout
 
 block content
 	.panel.panel-default
-		.panel-body.text-center
-			h1.text-info The Colorado App
+		.panel-body.text-center.blue-2
+			h1.text-info.mdi-image-filter-hdr   The Colorado App
 	#mapcontainer
 		#map-canvas
 	
-	footer.footer Sticky Footer
-
+	footer.footer.btn-group.btn-group-justified
+		a(title= "SEARCH BY MAP", href="/mapAdventures").btn.icon.mdi-action-language
+		a(title= "MAKE YOUR OWN ADVENTURE", href="/update").btn.icon.mdi-content-add
+		//- a(href="/mapAdventures").btn.icon.mdi-image-filter-hdr
+		//- a(href="/mapAdventures").btn.icon.mdi-image-filter-hdr
+		a(title= "HOME", href="/").btn.icon.mdi-image-filter-hdr
 block scripts
 	script(src="/scripts/map.js")

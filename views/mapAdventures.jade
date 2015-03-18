@@ -3,18 +3,19 @@ extends layout
 
 block content
 	.panel.panel-default
-		.panel-body.text-center
-			h1.text-info The Colorado App
+		.panel-body.text-center.blue-2
+			h1.text-info.mdi-image-filter-hdr   The Colorado App
 	#map-container.container.h1.text-center Locations
-		#map-gcanvas
+		#map-inner-container
+			#map-gcanvas
 	#my-adventure.container.h1.text-center Adventures
 		#adventure-list.list-group.text-center
 			for adventure in adventures
-				li.adventure(data-id= adventure._id, data-link="/view/#{adventure.type}/#{adventure._id}", data-coords= adventure.coords.lat +','+ adventure.coords.lng, data-name= adventure.name, )
-				img(src=adventure.imageUrl)
-				strong.h1= adventure.name
-				| &nbsp;
-				a.btn.btn-info.view(href="/view/#{adventure.type}/#{adventure._id}") view
+				.btn.adventure(data-id= adventure._id, data-link="/view/#{adventure.type}/#{adventure._id}", data-coords= adventure.coords.lat +','+ adventure.coords.lng, data-name= adventure.name, )
+					img(src=adventure.imageUrl)
+					strong= adventure.name
+					| &nbsp;
+					a.btn.btn-info.view(href="/view/#{adventure.type}/#{adventure._id}") view
 
 	#view-modal.modal.fade
 		.modal-dialog
@@ -31,8 +32,12 @@ block content
 					p.adventure-description
 					p.adventure-rating
 
-	footer.footer Sticky Footer
-
+	footer.footer.btn-group.btn-group-justified
+		a(title= "SEARCH BY MAP", href="/mapAdventures").btn.icon.mdi-action-language
+		a(title= "MAKE YOUR OWN ADVENTURE", href="/update").btn.icon.mdi-content-add
+		//- a(href="/mapAdventures").btn.icon.mdi-image-filter-hdr
+		//- a(href="/mapAdventures").btn.icon.mdi-image-filter-hdr
+		a(title= "HOME", href="/").btn.icon.mdi-image-filter-hdr
 block scripts
 	script(src="/scripts/main.js")
 	script(src="/scripts/welcome.js")

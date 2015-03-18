@@ -3,32 +3,40 @@ extends layout
 
 block content
 	.panel.panel-default
-		.panel-body.text-center.panel-material-light-blue
-			h1.text-info The Colorado App
+		.panel-body.text-center.blue-2
+			h1.text-info.mdi-image-filter-hdr   The Colorado App
+	h3 A tool
 	#adventure-list
 		h1.text-center FIND ADVENTURES NEAR YOU
-	ul
-		li: a(href="/view/trails") Trails
-		li: a(href="/view/snow") Snow
-		li: a(href="/view/biking") Biking
-		li: a(href="/view/geoCache") GeoCaching
-		li: a(href="/view/adrenaline") Adrenaline
-		li: a(href="/view/cityLife") City Life
-		li: a(href="/view/brewery") Brewery
-		li: a(href="/view/generalShenanigans") General Shenanigans
+	.btn-group.btn-group-justified(role='group', aria-label='...')
+		a.btn.btn-info(href="/view/trails") Trails
+	.btn-group.btn-group-justified(role='group', aria-label='...')
+		a.btn.btn-info(href="/view/snow") Snow
+	.btn-group.btn-group-justified(role='group', aria-label='...')
+		a.btn.btn-info(href="/view/biking") Biking
+	.btn-group.btn-group-justified(role='group', aria-label='...')
+		a.btn.btn-info(href="/view/geoCache") GeoCaching
+	.btn-group.btn-group-justified(role='group', aria-label='...')
+		a.btn.btn-info(href="/view/adrenaline") Adrenaline
+	.btn-group.btn-group-justified(role='group', aria-label='...')
+		a.btn.btn-info(href="/view/cityLife") City Life
+	.btn-group.btn-group-justified(role='group', aria-label='...')
+		a.btn.btn-info(href="/view/brewery") Brewery
+	.btn-group.btn-group-justified(role='group', aria-label='...')
+		a.btn.btn-info(href="/view/generalShenanigans") General Shenanigans
 
-		h1.text-center FIND BY LOCATION
-	ul
-		li: a(href="/mapAdventures") SEARCH ON MAP
-	.icon-preview
-		i.mdi-image-filter-hdr
-			span 
-	footer.footer
-		.icon-preview
-			i.mdi-image-filter-hdr
-				span 
+	//- 	h1.text-center FIND BY LOCATION
+	//- ul
+	//- 	li: a(href="/map") SEARCH ON MAP
+
+
+	footer.footer.btn-group.btn-group-justified
+		a(title= "SEARCH BY MAP", href="/mapAdventures").btn.icon.mdi-action-language
+		a(title= "MAKE YOUR OWN ADVENTURE", href="/update").btn.icon.mdi-content-add
+		//- a(href="/mapAdventures").btn.icon.mdi-image-filter-hdr
+		//- a(href="/mapAdventures").btn.icon.mdi-image-filter-hdr
+		a(title= "HOME", href="/").btn.icon.mdi-image-filter-hdr
 		
-
 block scripts
 	script(src="/scripts/welcome.js")
 	script(src="/scripts/main.js")

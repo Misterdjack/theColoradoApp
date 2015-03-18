@@ -2,47 +2,84 @@
 	height: 100%;
 	
 }
-
-#mapcontainer { 
+#mapcontainer {
 	float: none;
 	margin-left: auto;
 	margin-right: auto;
-	height: 80%;
-	width: 75%;
+}
+
+#map-inner-container { 
+	position: relative;
+	padding-bottom: 75%;
+	height: 0;
+	margin: 45px;
+}
+
+#map-gcanvas {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#map-canvas {
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
 
 #view-modal img{
 	width: 80%;
-	padding: 10px
+	padding: 10px;
 }
 
 #adventure-list img{
 	width: 20%;
-	padding: 10px
+	padding: 10px;
 }
+
+
+
+/*Color styles*/
+
 
 .footer {  
 	position: fixed;
 	bottom: 0;
   	width: 100%;
   	height: 80px;
-  	background-color: #FFE85C;
-  	opacity: .6
+  	background-color: #FF4B34;
+  	opacity: .7
 }
 
 .icon-preview {
-	width: 100%;
-	height: 80px
-}
-
-/*#6D5CFF
-#8375FF
-#3C2FB2*/
-
-#map-gcanvas {
 	float: none;
 	margin-left: auto;
-	margin-right: auto;
-	width: 500px;
-	height: 500px;
+	margin-right: auto
 }
+.icon {
+    font-size: 6em;
+/*    padding-left: 7px;
+    padding-right: 7px;*/
+}
+
+.red {
+	color: #FF4B34;
+}
+
+.yellow {
+	color: yellow;
+}
+
+.blue-1 {
+	color: #8375FF;
+}
+
+.blue-2 {
+	color: #6D5CFF;
+}
+
+.blue-3 {
+	color: #3C2FB2;
+}/*#6D5CFF
+#8375FF
+#3C2FB2*/
