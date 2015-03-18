@@ -5,7 +5,9 @@ var indexController = {
 	index: function(req, res) {
 		Adventure.find({}, function(err, docs){
 		// Adventure.find({coords : { $near : [req.params.lon, req.params.lat], function(err, docs){
-
+			if (err) {
+				return console.log(err)
+			}
 			res.render('index', {
 				adventures: docs
 			});
@@ -16,6 +18,10 @@ var indexController = {
 
 		if (!req.params.type) {
 			Adventure.find({}, function(err, docs){
+
+				if (err) {
+					return console.log(err)
+				}
 				res.render('view', {
 					adventures: docs
 				});
@@ -26,7 +32,9 @@ var indexController = {
 			Adventure.find({type: req.params.type, coords: {$near: {lat: 40, lng: -105}, $maxDistance : 1}}, function(err, docs){
 			// If geolocation is allowed use
 			// Adventure.find({type: req.params.type, coords: {$near: {lat: req.params.lat, lng: req.params.lng}, $maxDistance : 8046}}, function(err, docs){
-
+				if (err) {
+					return console.log(err)
+				}
 				res.render('view', {
 					adventures: docs
 				});
