@@ -1,14 +1,4 @@
-@media only screen and (max-device-width: 480px) {
-		#text {
-		    z-index:100;
-		    position:absolute;    
-		    color:white;
-		    font-size:20px;
-		    font-weight:bold;
-		    left:150px;
-		    top:160px;
-		}
-	}
+
 
 #map-canvas, html, body { 
 	height: 100%;
@@ -166,3 +156,19 @@ intro-img {
 }/*#6D5CFF
 #8375FF
 #3C2FB2*/
+
+
+/*Media Queries*/
+
+@media only screen and (max-device-width: 480px) {
+		#text {
+		    z-index:100;
+		    position:absolute;    
+		    color:white;
+		    font-size:20px;
+		    font-weight:bold;
+		    left:150px;
+		    top:160px;
+		}
+	}
+
