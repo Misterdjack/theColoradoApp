@@ -6,22 +6,22 @@ block content
 		.panel-body.text-center.blue-2
 			h1.text-info.mdi-image-filter-hdr   The Colorado App
 	#map-container.container.h1.text-center Locations
-		#map-inner-container
+		#gmap-inner-container
 			#map-gcanvas
 	#my-adventure.container.h1.text-center Adventures
 		#adventure-list.list-group.text-center
 			for adventure in adventures
-				.btn.adventure(data-id= adventure._id, data-link="/view/#{adventure.type}/#{adventure._id}", data-coords= adventure.coords.lat +','+ adventure.coords.lng, data-name= adventure.name, )
+				.btn.adventure.button-text(data-id= adventure._id, data-link="/view/#{adventure.type}/#{adventure._id}", data-coords= adventure.coords.lat +','+ adventure.coords.lng, data-name= adventure.name, )
 					img(src=adventure.imageUrl)
 					strong= adventure.name
 					| &nbsp;
-					a.btn.btn-info.view(href="/view/#{adventure.type}/#{adventure._id}") view
+					a.btn.btn-info.view.button-text(href="/view/#{adventure.type}/#{adventure._id}") view
 
 	#view-modal.modal.fade
 		.modal-dialog
 			.modal-content
 				.modal-header
-					button.close(type="button", data-dismiss="modal")
+					button.close.button-text.button-text(type="button", data-dismiss="modal")
 						span &times;
 					h4.modal-title View an adventure
 				.modal-body
@@ -30,7 +30,7 @@ block content
 					p.adventure-date Date 
 					p.text-center.adventure-imgUrl
 					p.adventure-description
-					p.adventure-rating
+					p.adventure-links
 
 	footer.footer.btn-group.btn-group-justified
 		a(title= "SEARCH BY MAP", href="/mapAdventures").btn.icon.mdi-action-language
