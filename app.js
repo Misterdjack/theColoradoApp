@@ -31,8 +31,6 @@ app.post('/update/deleteAdventure', updateController.deleteAdventure);
 app.get('/update/getAdventure/:adventure_id', updateController.getAdventure);
 app.post('/update/editAdventure/:adventure_id', updateController.editAdventure);
 
-// Map route
-// app.get('/map', mapController.map);
 
 var server = app.listen(process.env.PORT || 7194
 // 	, function() {
