@@ -1,3 +1,7 @@
+////////////////////////////////
+// gmaps options and settings //
+////////////////////////////////
+
 console.log('hello from gmapper')
 
     var map;
