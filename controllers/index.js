@@ -1,3 +1,7 @@
+//////////////////////////
+// Logic for index page //
+//////////////////////////
+
 var Adventure = require('../models/adventure.js');
 
 var indexController = {

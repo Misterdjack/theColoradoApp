@@ -1,3 +1,7 @@
+//////////////////////////
+// Model for adventures //
+//////////////////////////
+
 var mongoose = require('mongoose');
 
 var adventureSchema = mongoose.Schema({

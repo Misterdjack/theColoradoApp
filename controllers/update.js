@@ -1,3 +1,7 @@
+///////////////////////////////
+// CRUD Logic for adventures //
+///////////////////////////////
+
 var Adventure = require('../models/adventure.js');
 
 var updateController = {

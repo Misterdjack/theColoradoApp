@@ -1,3 +1,7 @@
+/////////////////////////////
+// Logic for mapAdventures //
+/////////////////////////////
+
 var Adventure = require('../models/adventure.js');
 
 var mapController = {
