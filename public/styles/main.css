@@ -1,4 +1,4 @@
-
+/*Styles for google maps and gmaps api*/
 
 #map-canvas, html, body { 
 	height: 100%;
@@ -48,14 +48,14 @@
 	border-color: yellow;
 }
 
+/*pop up modal images*/
+
 #view-modal img{
 	width: 80%;
 	padding: 10px;
 }
 
-/*#my-adventure {
-	margin-bottom: 110px;
-}*/
+/*appended images in index*/
 
 #adventure-list img{
 	width: 20%;
@@ -63,23 +63,13 @@
 	
 }
 
+/*keeps bottom image from being hidden by sticky bottom nav*/
+
 #adventure-list {
 	margin-bottom: 110px;
 }
 
-
-
-/*Color styles*/
-
-/*.intro-img {
-	display: block;
-	background: url(http://s16.postimg.org/h9ma6nhg5/maroon_Bowl.jpg) no-repeat center center;
-	background-size: 100%;
-}
-
-.fancy {
-	font-family: "Hoefler Titling A", "Hoefler Titling B", georgia, serif;
-}*/
+/*Hero banner image for index*/
 
 .wrapper {
     width: 100%;
@@ -105,9 +95,12 @@
     top:160px;
 }
 
+/*top panel*/
 .panel {
 	margin: 0;
 }
+
+/*sticky footer styles*/
 .footer {  
 	position: fixed;
 	margin: 0;
@@ -135,6 +128,8 @@
 	font-size: 22px;
 }
 
+/*color styles*/
+
 .red {
 	color: #FF4B34;
 }
@@ -153,10 +148,7 @@
 
 .blue-3 {
 	color: #3C2FB2;
-}/*#6D5CFF
-#8375FF
-#3C2FB2*/
-
+}
 
 /*Media Queries*/
 
