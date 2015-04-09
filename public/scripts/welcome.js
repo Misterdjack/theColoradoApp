@@ -41,7 +41,7 @@ var adventureView = function(e){
 
   // var adventureElement = $(this).closest('.adventure');
   // var targetId = adventureElement.attr('data-id');
-  console.log($(this));
+  // console.log($(this));
   $.get($(this).attr('href'), function(data){
     $('#view-modal .adventure-name').text(data.name);
     // $('#view-modal .adventure-latlng').text(data.latlng);

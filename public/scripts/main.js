@@ -13,7 +13,7 @@ var onAdventureSubmit = function(e){
   if (marker) {
     var poslatlng =  marker.position.toUrlValue().split(',');
 
-    console.log(poslatlng);
+    // console.log(poslatlng);
 
     var newAdventureData = {
       type: $('.adventure-type').val(),
@@ -39,7 +39,7 @@ var onAdventureSubmit = function(e){
 
       $('#adventure-list').append(newAdventureEl);
       
-      console.log(data)
+      // console.log(data)
     });
   }
   else {
@@ -113,7 +113,7 @@ var adventureEditSubmit = function(e){
   var targetId = $('#edit-modal .adventure-id').val();
 
   $.post('/update/editAdventure/' + targetId, dataFromClient, function(data){
-    console.log(data);
+    // console.log(data);
 
     // Hide the modal in the end
     $('#edit-modal').modal('hide');
