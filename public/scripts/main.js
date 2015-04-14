@@ -39,7 +39,7 @@ var onAdventureSubmit = function(e){
 
       $('#adventure-list').append(newAdventureEl);
       
-      // console.log(data)
+      console.log(data)
     });
   }
   else {
