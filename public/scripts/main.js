@@ -129,10 +129,8 @@ var adventureEditSubmit = function(e){
 $(document).on('ready', function(){
   // Bootstrap Material Design
   $.material.init();
-  //  Bootstrap Tooltip
 
   $('#new-adventure').on('submit', onAdventureSubmit);
-
 
   // Handle deletion clicks
   $(document).on('click', '.delete', adventureDelete);

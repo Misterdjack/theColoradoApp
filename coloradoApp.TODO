@@ -3,7 +3,9 @@
      ✔ Create new route @done (15-03-14 19:45)
  ✔ Create Splash Page @done (15-03-16 16:22)
  ✔ Add material design @done (15-03-16 11:14)
- ☐ Add route to view/:type/:
+ ☐ ADD PASSPORT AUTHENTICATION
+ ☐ ADD CAMERA IMAGE CAPTURE AND/OR UPLOAD
+ ☐ ADD AIRBNB API
 
      ☐ In Jade file e.g. if user the a(href="/update")
                                    res.render('adventures' {
